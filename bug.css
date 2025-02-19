@@ -1,0 +1,13 @@
+The following CSS code snippet exhibits an uncommon error related to the specificity of CSS selectors:
+
+```css
+div#myElement p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+```
+
+The issue lies in the unexpected behavior when both selectors apply to the same element.  While the `div#myElement p` selector is more specific (it targets a paragraph element within a div with the ID `myElement`), there might be instances where it doesn't override the `p` selector as intended. This happens if the element with the `p` selector is further nested within other elements that share the same ID, or in combination with other less specific rules that take higher precedence.
