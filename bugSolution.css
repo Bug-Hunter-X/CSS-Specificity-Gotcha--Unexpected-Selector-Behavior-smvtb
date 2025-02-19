@@ -1,0 +1,31 @@
+To reliably override the style of the nested paragraph, increase the specificity of the selector. There are several ways to do this:
+
+**1. Increase Specificity:**
+Add more specific selectors. For instance, adding a class to the div or paragraph elements will increase specificity.
+
+```css
+div.myClass #myElement p {
+  color: blue;
+}
+```
+
+**2. Using !important:** (Use sparingly and with caution)
+
+```css
+div#myElement p {
+  color: blue !important;
+}
+```
+
+**3. Order of Rules:**
+Sometimes, the order of rules matters. If you place the more specific rule *after* a less specific rule, it might not override it. Ensure the more specific selector appears later in your stylesheet.
+
+```css
+p {
+  color: red;
+}
+div#myElement p {
+  color: blue; 
+}
+```
+Choosing the best solution depends on your code structure.  Adding more specific selectors generally provides a cleaner, more maintainable solution than using `!important`.
